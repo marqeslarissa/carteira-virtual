@@ -12,70 +12,68 @@ class DonutChart extends PureComponent {
     };
   }
   render() {
-   // const { saldo } = this.state;
     return (
       <Grommet>
-        <Box pad="small" elevation="medium">
-          <Row>
-            <Col lg="12">
-              <Typography
-                variant="h5"
-                align="center"
-                component="p"
-                style={{ color: '#550a58', fontWeight: 'bold' }}
-              >
-                CARTEIRAL VIRTUAL
+        <div id="chart" className="grommet__container">
+          <Box pad="small" elevation="medium">
+            <Row>
+              <Col lg="12">
+                <Typography
+                  className="title-chart"
+                  variant="h5"
+                  align="center"
+                  component="p"
+                >
+                  CARTEIRAL VIRTUAL
               </Typography>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <Typography
-                variant="h6"
-                align="center"
-                component="p"
-                style={{ color: '#550a58', fontWeight: 'bold' }}
-              >
-                Informações
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <Typography
+                  className="title-chart"
+                  variant="h6"
+                  align="center"
+                  component="p"
+                >
+                  Informações
               </Typography>
-            </Col>
-          </Row>
-          <br />
-          <Grid item align="center">
-          </Grid>
-          <Grid item align="center">
-            <Typography variant="h6" style={{ color: '#550a58' }}>R$ {this.state.saldo}</Typography>
-            <Typography
-              variant="subtitle1"
-              style={{ color: '#550a58' }}
-              component="p"
-            >
-              Seu saldo atual
+              </Col>
+            </Row>
+            <br />
+            <Grid item align="center">
+            </Grid>
+            <Grid item align="center">
+              <Typography>R$ {this.state.saldo}</Typography>
+              <Typography
+                variant="subtitle1"
+                component="p"
+              >
+                Seu saldo atual
             </Typography>
-          </Grid>
-          <br />
-          <Grid item align="center">
-            <Typography variant="h6" style={{ color: '#550a58' }}>$ 4,12</Typography>
-            <Typography
-              variant="subtitle1"
-              style={{ color: '#550a58' }}
-              component="p"
-            >
-              Cotação Dolar
+            </Grid>
+            <br />
+            <Grid item align="center">
+              <Typography variant="h6">$ 9.000,00</Typography>
+              <Typography
+                variant="subtitle1"
+                component="p"
+              >
+                Cotação Bitcoin
             </Typography>
-          </Grid>
-          <br />
-          <Grid item align="center">
-            <Typography variant="h6" style={{ color: '#550a58' }} >$ 9.000,00</Typography>
-            <Typography
-              variant="subtitle1"
-              style={{ color: '#550a58' }}
-              component="p"
-            >
-              Cotação Bitcoin
+            </Grid>
+            <br />
+            <Grid item align="center">
+              <Typography variant="h6">$ 4,12</Typography>
+              <Typography
+                variant="subtitle1"
+                component="p"
+              >
+                Cotação Brita
             </Typography>
-          </Grid>
-        </Box>
+            </Grid>
+          </Box>
+        </div>
       </Grommet >
     );
   }

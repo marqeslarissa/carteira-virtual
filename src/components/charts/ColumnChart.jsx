@@ -4,7 +4,7 @@ import { Grommet, Box } from "grommet";
 import { Row } from 'reactstrap';
 import Typography from "@material-ui/core/Typography";
 
-const colorschart = ['#abeb65', '#a565ea', '#e9e765'];
+const colorschart = ['#abeb65', '#a565ea'];
 
 class ColumnChart extends PureComponent {
   constructor(props) {
@@ -17,7 +17,7 @@ class ColumnChart extends PureComponent {
           bar: {
             horizontal: false,
             columnWidth: '55%',
-            
+
           },
         },
         dataLabels: {
@@ -42,14 +42,11 @@ class ColumnChart extends PureComponent {
         }
       },
       series: [{
-        name: 'Dólar',
+        name: 'Brita',
         data: [44]
       }, {
         name: 'Bitcoin',
         data: [76]
-      }, {
-        name: 'Euro',
-        data: [35]
       }],
     }
   }
@@ -58,10 +55,12 @@ class ColumnChart extends PureComponent {
       <Grommet>
         <div id="chart" className="grommet__container">
           <Box pad="small" elevation="medium">
-            <Row>
-              <Typography variant="h6" className="title-chart">Seus Investimentos</Typography>
-            </Row>
-            <Typography variant="subtitle1">Em valor de moeda</Typography>
+            <div className="title-chart">
+              <Row>
+                <Typography variant="h6" className="title-chart">Seus Investimentos</Typography>
+              </Row>
+              <Typography variant="subtitle1">Em valor de moeda</Typography>
+            </div>
             <Chart
               options={this.state.options}
               series={this.state.series}

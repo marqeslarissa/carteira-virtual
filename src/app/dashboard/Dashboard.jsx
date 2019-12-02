@@ -3,7 +3,6 @@ import { Container, Row, Col } from "reactstrap";
 import DonutChart from "../../components/charts/DonutChart";
 import ColumnChart from "../../components/charts/ColumnChart";
 import InfoChart from "../../components/charts/InfoChart";
-import LineChart from "../../components/charts/LineChart";
 
 class Dashboard extends PureComponent {
   render() {
@@ -13,16 +12,11 @@ class Dashboard extends PureComponent {
           <Col xs={12} sm={12} md={3} lg={3}>
             <InfoChart />
           </Col>
-          <Col xs={12} sm={12} md={9} lg={9}>
+          <Col xs={12} sm={12} md={4} lg={4}>
             <DonutChart />
           </Col>
-        </Row>
-        <Row>
-          <Col xs={12} sm={12} md={6} lg={6}>
+          <Col xs={12} sm={12} md={5} lg={5}>
             <ColumnChart />
-          </Col>
-          <Col xs={12} sm={12} md={6} lg={6}>
-            <LineChart />
           </Col>
         </Row>
       </Container>

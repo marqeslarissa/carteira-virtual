@@ -4,27 +4,54 @@ import { Container, Row, Col, Button, Form } from 'reactstrap';
 import { TextField } from '@material-ui/core';
 
 class Cadastro extends PureComponent {
+
   constructor(props) {
     super(props);
     this.state = {
-      nome: '',
-      usuario: '',
-      senha: '',
-      data_nasc: '',
-      cpf: '',
-      end: '',
-      cidade: '',
-      estado: '',
-      cep: '',
-      valor: ''
+
+    }
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  
+  handleSubmit(event) {
+    event.preventDefault();
+
+    const data = new FormData(event.target);
+    let usuario = {};
+
+    // insere as propriedades do formulado no usuario
+    Array.from(data.keys()).forEach(element => {
+      usuario[element] = data.get(element)
+    });
+
+
+    //verifica se nao exite usuario com o mesmo nome
+    const meuStorage = localStorage;
+    let temUsuario = localStorage.getItem(data.get('nome'));
+
+    if (temUsuario) {
+      alert('usuario ja existe');
+    } else {
+
+      // cria o array com saldo de cada moeda
+      usuario.brita = [{saldoAnterior: 0, valorOperacao: 0, saldoAtual: 0}]
+      usuario.btc = [{saldoAnterior: 0, valorOperacao: 0, saldoAtual: 0}]
+
+      usuario.valor = 100000.00; // aplica o saldo inicial
+
+      //salva no local storage do navegado;
+      meuStorage.setItem(data.get('nome'), JSON.stringify(usuario));
+      alert('usuario inserido');
     }
   }
+
   render() {
-    const { handleSubmit, reset } = this.props;
+     const { reset } = this.props;
     return (
       <Container className="layout__container">
         <h2>Cadastro</h2><br />
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={this.handleSubmit}>
           <Row>
             <Col xs={12} lg={4}>
               <TextField
